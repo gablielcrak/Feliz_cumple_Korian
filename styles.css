@@ -1,0 +1,125 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Contenedor de la tarjeta (Efecto Glassmorphism) */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    max-width: 450px;
+    width: 90%;
+    position: relative;
+    z-index: 10;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Animación de entrada de la tarjeta */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.icon-cake {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #4eacc5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(78, 172, 197, 0.5);
+}
+
+.name {
+    font-size: 3.5rem;
+    color: #e94560;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 15px rgba(233, 69, 96, 0.7);
+    letter-spacing: 4px;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    background: linear-gradient(90deg, #e94560, #4eacc5);
+    border: none;
+    padding: 0.8rem 2rem;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(233, 69, 96, 0.4);
+}
+
+/* Globos flotantes de fondo */
+.balloon {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    bottom: -100px;
+    opacity: 0.6;
+    animation: floatUp 8s infinite linear;
+}
+
+.b1 { left: 10%; background: #e94560; animation-duration: 10s; animation-delay: 0s; }
+.b2 { left: 30%; background: #4eacc5; animation-duration: 12s; animation-delay: 2s; width: 40px; height: 50px; }
+.b3 { left: 75%; background: #ffbe0b; animation-duration: 9s; animation-delay: 1s; }
+.b4 { left: 85%; background: #a2d2ff; animation-duration: 11s; animation-delay: 3s; }
+
+@keyframes floatUp {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        bottom: 105vh;
+        transform: translateX(-20px);
+    }
+}
